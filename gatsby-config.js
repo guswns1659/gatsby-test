@@ -50,6 +50,8 @@ if (
 module.exports = {
     siteMetadata: {
         siteUrl: process.env.SITEURL || config.siteUrl,
+        title: "Welcome!! Jack's Blog",
+        description: "계획을 세우고 피드백을 통한 성장을 좋아하는 개발자입니다."
     },
     trailingSlash: 'always',
     plugins: [

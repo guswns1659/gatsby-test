@@ -19,6 +19,8 @@ import "../../styles/app.css";
  *
  */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+    const jackTitle = data.site.siteMetadata.title
+    const jackDesc = data.site.siteMetadata.description
     const site = data.allGhostSettings.edges[0].node;
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
@@ -106,10 +108,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         {isHome ? (
                             <div className="site-banner">
                                 <h1 className="site-banner-title">
-                                    Jack's Blog
+                                    {jackTitle}
                                 </h1>
                                 <p className="site-banner-desc">
-                                    {site.description}
+                                    {jackDesc}
                                 </p>
                             </div>
                         ) : null}
@@ -186,6 +188,13 @@ const DefaultLayoutSettingsQuery = (props) => (
       node {
         ...GhostSettingsFields
       }
+    }
+  }
+  site {
+    siteMetadata {
+      description
+      siteUrl
+      title
     }
   }
   file(relativePath: {eq: "ghost-icon.png"}) {

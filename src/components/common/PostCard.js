@@ -30,9 +30,9 @@ const PostCard = ({ post }) => {
                     </div>
                 )}
                 {post.featured && <span>Featured</span>}
-                <h2 className="post-card-title">{post.title}</h2>
+                <h2 className="post-card-title">{'제목!!!!!!!'}</h2>
             </header>
-            <section className="post-card-excerpt">{post.excerpt}</section>
+            <section className="post-card-excerpt">{'설명란'}</section>
             <footer className="post-card-footer">
                 <div className="post-card-footer-left">
                     <div className="post-card-avatar">
