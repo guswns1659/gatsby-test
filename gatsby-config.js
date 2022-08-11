@@ -53,6 +53,20 @@ module.exports = {
         title: "Welcome!! Jack's Blog",
         description: "계획을 세우고 피드백을 통한 성장을 좋아하는 개발자입니다."
     },
+    navigation: [
+        {
+            label: "Home",
+            url: "/"
+        },
+        {
+            label: "Tag",
+            url: "/tag/getting-started"
+        },
+        {
+            label: "Blog",
+            url: "/blog"
+        },
+    ],
     trailingSlash: 'always',
     plugins: [
         /**

@@ -21,6 +21,8 @@ import "../../styles/app.css";
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const jackTitle = data.site.siteMetadata.title
     const jackDesc = data.site.siteMetadata.description
+    const jackNavigation = data.site.navigation;
+
     const site = data.allGhostSettings.edges[0].node;
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
@@ -119,7 +121,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             <div className="site-nav-left">
                                 {/* The navigation items as setup in Ghost */}
                                 <Navigation
-                                    data={site.navigation}
+                                    data={jackNavigation}
                                     navClass="site-nav-item"
                                 />
                             </div>
@@ -195,6 +197,10 @@ const DefaultLayoutSettingsQuery = (props) => (
       description
       siteUrl
       title
+    }
+    navigation {
+        label
+        url
     }
   }
   file(relativePath: {eq: "ghost-icon.png"}) {
